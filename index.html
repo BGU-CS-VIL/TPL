@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Temporal Prototype Learning (TPL): A prototype-based framework for joint alignment and synchronization of multiple videos.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Temporal Prototype Learning (TPL)" />
+  <meta property="og:description" content="TPL: A prototype-based framework for joint alignment and synchronization of multiple videos." />
+  <meta property="og:url" content="https://yourwebsite.com/TPL/" />
+  <meta property="og:image" content="static/images/tpl_banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="Temporal Prototype Learning (TPL)">
+  <meta name="twitter:description" content="TPL: A prototype-based framework for joint alignment and synchronization of multiple videos.">
+  <meta name="twitter:image" content="static/images/tpl_banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Keywords for search engines -->
+  <meta name="keywords" content="Temporal Prototype Learning, TPL, Video Synchronization, Joint Alignment, Multi-video Analysis">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Temporal Prototype Learning (TPL)</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Synchronization of Multiple Videos</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">Avihai Naaman<sup>*</sup>,</span>
+              <span class="author-block">Ron Shapira Weber<sup>*</sup>,</span>
+              <span class="author-block">Oren Freifeld</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Ben-Gurion University of the Negev, Israel<br>ICCV 2025</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2510.14051" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link 
+                <span class="link-block">
+                    <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+-->
+
+                <!-- Github link (unclickable) -->
+<!--                 <span class="link-block">
+                  <span class="external-link button is-normal is-rounded is-dark unclickable">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Soon)</span>
+                  </span>
+                </span> -->
+
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2510.14051" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/tpl_intro.jpeg" alt="Seagulls set alignment" />
+        <h2 class="subtitle has-text-centered">
+        <p>
+    <strong>Temporal Prototype Learning (TPL)</strong> uses an
+   "off-the-shelf" feature extractor, denoted by φ,
+    to generate initial multichannel action-progression sequences for videos
+    of the same action (e.g., Ball pitch). Colors indicate different
+    (and temporally-misaligned) videos of the same action. TPL produces the
+    joint alignment and prototypical sequence, mapping key events
+    (e.g., <em>Ball Release</em>).
+  </p>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified" style="padding: 10px; background-color: #f5f5f5; border-radius: 8px;">
+            <p> 
+                Synchronizing videos captured simultaneously from multiple cameras in the same scene is often easy and typically
+  requires only simple time shifts. However, synchronizing
+  videos from different scenes or, more recently, generative AI
+  videos, poses a far more complex challenge due to diverse
+  subjects, backgrounds, and nonlinear temporal misalignment. We propose Temporal Prototype Learning (TPL), a
+  prototype-based framework that constructs a shared, compact 1D representation from high-dimensional embeddings
+  extracted by any of various pretrained models. TPL robustly
+  aligns videos by learning a unified prototype sequence that
+  anchors key action phases, thereby avoiding exhaustive pairwise matching. Our experiments show that TPL improves
+  synchronization accuracy, efficiency, and robustness across
+  diverse datasets, including fine-grained frame retrieval and
+  phase classification tasks. Importantly, TPL is the first
+  approach to mitigate synchronization issues in multiple generative AI videos depicting the same action.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- End paper abstract -->
+
+<!-- Video Carousel Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="title is-3 has-text-centered">
+        Videos Synchronization by TPL - GEN-MVS Dataset
+      </h2>
+      <h3 class="subtitle has-text-centered">
+        Top - Original Videos. Bottom - Videos After Synchronization.
+      </h3>
+
+      <!-- Carousel -->
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <!-- Video Item Template -->
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/dips_dips_val_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for GEN AI - 'Dips'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/deadlift_deadlift_0.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for GEN AI - 'Deadlift'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/pushups_pushups_val_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for GEN AI - 'Pushup'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/bench_press_bench_press_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for GEN AI - 'Bench Press'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/pullups_pullups_val_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for GEN AI - 'Pullup'
+          </h2>
+        </div>
+
+      </div> <!-- end carousel -->
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Video Carousel Section -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Section Title -->
+      <h2 class="title is-3 has-text-centered">
+        Videos Synchronization by TPL - Penn Action Dataset
+      </h2>
+      <h3 class="subtitle has-text-centered">
+        Top - Original Videos. Bottom - Videos After Synchronization.
+      </h3>
+
+      <!-- Carousel -->
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <!-- Video Item Template -->
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/golf_swing_golf_swing_val_60.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Golf Swing'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/jumping_jacks_jumping_jacks_val_34.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Jumping Jacks'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/baseball_swing_baseball_swing_val_33.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Baseball Swing'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/pushup_pushup_val_33.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Pushup'
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/tennis_serve_tennis_serve_val_63.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Tennis Serve'
+          </h2>
+        </div>
+      <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/baseball_swing_baseball_swing_val_33.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Baseball Swing'
+          </h2>
+        </div>
+
+              <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/tennis_forehand_tennis_forehand_val_44.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Tennis Forehand'
+          </h2>
+        </div>
+
+              <div class="item">
+          <div class="video-wrapper has-text-centered">
+            <video width="90%" controls>
+              <source src="static/videos/penn_action/baseball_pitch_baseball_pitch_val_88.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Videos Synchronization by TPL for Penn Action - 'Baseball Pitch'
+          </h2>
+        </div>
+
+      </div> <!-- end carousel -->
+
+    </div>
+  </div>
+</section>
+
+
+  
+
+
+  
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <!-- Default Statcounter code for Sync of Multiple videos
+https://bgu-cs-vil.github.io/TPL/ -->
+<script type="text/javascript">
+var sc_project=13177101; 
+var sc_invisible=1; 
+var sc_security="913faf18"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics Made Easy -
+Statcounter" href="https://statcounter.com/" target="_blank"><img
+class="statcounter" src="https://c.statcounter.com/13177101/0/913faf18/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+<style>
+  .video-wrapper {
+    margin: 1.5rem 0; /* vertical spacing between videos */
+  }
+
+  /* Responsive videos */
+  video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Center subtitles nicely */
+  .subtitle {
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+</style>
+</body>
+
+</html>
