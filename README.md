@@ -10,4 +10,3 @@ Avihai Naaman*, [Ron Shapira Weber*](https://ronshapiraweber.github.io/), and [O
 
 ![Introduction Figure](static/images/tpl_intro.jpeg)
 
-## Code coming soon...
