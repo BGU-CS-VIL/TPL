@@ -1,0 +1,41 @@
+data:
+  path: /data/features
+  modality: hl_features  # hl_features | pose | mesh | raw | kp2d | kp3d
+  batch_size: 64
+  val_split: 0.1
+  num_workers: 4
+
+model:
+  bottleneck: 1
+  tess_size: 16
+  n_recurrences: 4
+
+loss:
+  n_ref: 10        # number of median-length sequences used as ICAE prototype
+  beta: 0.1       # KL divergence weight
+  smooth_w: 0.5   # latent trajectory smoothness weight
+  align_w: 1.0    # pairwise latent alignment weight (pre-ICAE pull)
+
+augment:
+  cpab:
+    enabled: true
+    scale: 0.1          # warp strength — 0.05 subtle, 0.2 aggressive
+    zero_boundary: true
+  affine:
+    enabled: true
+    scale_range: 0.1    # ±10% time stretch
+    shift_frac: 0.1     # ±10% time shift
+    amplitude: 0.1      # ±10% amplitude scale
+    p: 0.5              # probability per sample
+
+train:
+  epochs: 200
+  lr: 1.0e-3
+  weight_decay_vae: 0.0
+  weight_decay_aligner: 1.0e-4
+  # sigmoid schedule: lam = sigmoid(k * (epoch - t0))
+  # lam≈0 early (recon dominates), lam≈1 late (alignment kicks in)
+  align_schedule_k: 0.1   # steepness of the transition
+  align_schedule_t0: 100  # epoch where lam=0.5 (transition midpoint)
+  log_every: 10
+  save_dir: ./checkpoints
